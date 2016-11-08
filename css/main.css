@@ -1,0 +1,36 @@
+body{
+    color:grey;
+    background: white;
+}
+header{
+    margin-bottom:10px;
+}
+header h2{
+    font-size:20px;
+}
+.form-control{
+    display:inline;
+}
+input[type=text]{
+    width:100px;
+}
+.select{
+    width:80px;
+}
+.well{
+    margin-bottom:8px;
+}
+.result-box{
+    border-radius:5px;
+    padding:10px;
+    display:inline;
+    background:rgba(255,255,255,0.5);
+    margin-right:7px;
+    text-align:center;
+}
+
+@media screen and (min-width: 480px) {
+    header h2 {
+        font-size:40px;
+    }
+}

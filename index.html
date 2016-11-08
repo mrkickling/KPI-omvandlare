@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omvandla kronans värde</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
 
-   <script src="data/data.json"></script>
+    <script src="data/data.json"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -17,13 +16,69 @@
 </head>
 
 <body ng-app='kpi-app' ng-controller='kpi-controller'>
+    <header class="container-fluid">
+       <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+                <h2>Vad var kronan värd?</h2>
+                <p>Konvertera kronans värde från ett visst årtal till ett annat.</p>
+            </div>
+       </div>
+    </header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-5">
-                <h2>Tjo</h2>
-                {{data}}
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+                    <form name='converter'>
+                       
+                           <div class="well">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    ng-change="calcWorth()" 
+                                    ng-model="kronor" 
+                                    style="text-align:center"
+                                >
+
+                                kr
+                                
+                                <select 
+                                     name="fromlist" 
+                                     form="converter"  
+                                     ng-init="fromyear = data['1980']" 
+                                     ng-model="fromyear"
+                                     ng-change="calcWorth()" 
+                                     ng-options="key for (key, value) in data"
+                                     class="form-control select"
+                                >
+                                  <option value="{{value}}" ng-repeat="(key,value) in data">{{key}}</option>
+                                </select>
+                            </div>
+                        
+                    
+                        
+                        Motsvarar 
+                        
+                        <div class="well">
+                            <div class="result-box">
+                                {{result}} kr
+                            </div>
+                            
+
+                            <select 
+                             name="fromlist" 
+                             form="converter"  
+                             ng-change="calcWorth()" 
+                             ng-init="toyear = data['2015']" 
+                             ng-model="toyear"
+                             ng-options="key for (key, value) in data"
+                             class="form-control select">
+                              <option value="{{value}}" ng-repeat="(key,value) in data">{{key}}</option>
+                            </select>
+                        
+                        </div>
+                    </form>
             </div>
         </div>
     </div>
+        
 </body>
 </html>
