@@ -6,7 +6,7 @@ header{
     margin-bottom:10px;
 }
 header h2{
-    font-size:20px;
+    font-size:25px;
 }
 .form-control{
     display:inline;
@@ -29,8 +29,28 @@ input[type=text]{
     text-align:center;
 }
 
+.social-media-list{
+    list-style:none;
+    color:  #8f9296;
+    margin-bottom:20px;
+    padding-left:0;
+    text-align:center;
+}
+.social-media-list li{
+    display:inline;
+    margin-right:20px;
+    padding-left:0;
+
+}
+.social-media-list li a{
+    font-size:20px;
+    color:  #8f9296;
+}
+
+
 @media screen and (min-width: 480px) {
     header h2 {
         font-size:40px;
     }
 }
+

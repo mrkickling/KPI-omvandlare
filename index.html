@@ -6,6 +6,7 @@
     <title>Omvandla kronans värde</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"></script>
 
     <script src="data/data.json"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -36,6 +37,7 @@
                                     ng-change="calcWorth()" 
                                     ng-model="kronor" 
                                     style="text-align:center"
+                                    placeholder="0"
                                 >
 
                                 kr
@@ -79,6 +81,41 @@
             </div>
         </div>
     </div>
-        
+       
+    <footer class="container-fluid text-center">
+
+                <div class="footer-left col-sm-6">
+                    <h2 class='footer-company-name'>
+                    </h2>
+
+                </div>
+
+                <div class="footer-right col-sm-6">
+                 <ul class='social-media-list'>
+                     <li>
+                        <a href="http://twitter.com/loxdalen">
+                         <i class="fa fa-twitter"></i> 
+                        </a>
+                     </li>
+                     <li>
+                        <a href="http://github.com/mrkickling">
+                         <i class="fa fa-github"></i> 
+                        </a>
+                     </li>
+                     <li>
+                        <a href="mailto:loxdalen@gmail.com">
+                         <i class="fa fa-envelope"></i> 
+                        </a>
+                     </li>
+                 </ul>
+
+                 
+                 <p class="footer-copyright">Joakim Loxdal &copy; 2016</p>
+
+
+                </div>
+
+    </footer>
+
 </body>
 </html>
